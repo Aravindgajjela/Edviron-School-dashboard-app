@@ -1,0 +1,48 @@
+/* General styles for the dark/light mode toggle */
+.toggle-container {
+                  position: fixed;
+                  top: 20px;
+                  left: 20px;
+                  z-index: 1000;
+                }
+                
+                button {
+                  display: flex;
+                  align-items: center;
+                  background-color: #f1f1f1;
+                  border: none;
+                  padding: 10px 15px;
+                  border-radius: 25px;
+                  cursor: pointer;
+                  font-size: 16px;
+                  transition: background-color 0.3s ease;
+                }
+                
+                button:hover {
+                  background-color: #ddd;
+                }
+                
+                button .ml-2 {
+                  margin-left: 10px;
+                }
+                
+                /* Dark mode styles for the page */
+                body.dark-mode {
+                  background-color: #121212;
+                  color: #fff;
+                }
+                
+                body.dark-mode .toggle-container button {
+                  background-color: #333;
+                  color: #fff;
+                }
+                
+                body.dark-mode .toggle-container button:hover {
+                  background-color: #444;
+                }
+                
+                /* Optional: Add additional dark mode styles for the page */
+                body.dark-mode .container {
+                  background-color: #1f1f1f;
+                }
+                
