@@ -1,0 +1,81 @@
+School Dashboard - Project Description
+
+
+login 
+username and password
+     "username": "aravind",
+    "email": "aravind123@gmail.com",
+    "password": "aravind123"
+
+
+
+Overview
+The School Dashboard is a web application that allows schools, administrators, and staff to manage and view transaction data efficiently. The application includes features for tracking transactions, updating transaction statuses, and managing user authentication. With a user-friendly interface and secure authentication, the dashboard makes it easy to keep track of school-related transactions.
+
+Frontend (User Interface)
+The frontend of the School Dashboard is a responsive web application built with React.js. It provides a clean, modern, and easy-to-use interface where users can view transaction data, filter information by school, and manage transactions.
+
+Key features include:
+- Dashboard View: Displays a summary of transactions and their statuses.
+- Transaction List: View a list of all transactions, including detailed information like amounts and status.
+- Search & Filter: Easily search and filter transactions by school, transaction ID, or status.
+- User Authentication: Secure login and registration system for administrators to access the dashboard.
+
+Backend (API and Data Management)
+The backend is built with Node.js and Express.js, offering a robust RESTful API to handle the business logic and database operations. The API is responsible for managing user authentication, fetching transaction data, and updating transaction statuses.
+
+Key features include:
+- User Authentication: Admins can sign up, log in, and securely access the dashboard using JWT tokens for authorization.
+- Transaction Management: Admins can fetch all transactions, view transactions by school, check transaction status, and update transaction statuses manually or via webhook.
+- Database: The backend integrates with MongoDB to store transaction and user data.
+
+Features
+User Authentication:
+- Sign up and log in as an admin.
+- Secure access to the dashboard using JWT tokens.
+
+Transaction Management:
+- Fetch all transactions or filter by school.
+- Check the status of a specific transaction using a custom order ID.
+- Update the status of transactions either manually or automatically via a webhook.
+
+Real-time Updates:
+- Webhook integration allows automatic updates of transaction statuses.
+
+Technologies Used
+Frontend: React.js, HTML, CSS, Bootstrap (or any other UI framework)
+Backend: Node.js, Express.js, MongoDB, JWT (for user authentication)
+APIs: RESTful API endpoints for handling data and user interactions
+Hosting: (Mention where the app is hosted, e.g., Heroku, Netlify, etc.)
+
+How It Works
+- Authentication: Users sign up and log in via the frontend. JWT tokens are used for secure communication between the client and server.
+- Transaction Management: Admins can interact with the API to retrieve or update transaction data. The system allows searching, filtering, and real-time updates via webhooks.
+- Data Storage: All transaction and user data are stored in a MongoDB database, which the backend interacts with for CRUD operations (Create, Read, Update, Delete).
+
+Installation and Setup
+Clone the repository:
+bash
+  git clone <repository-url>
+
+Install the backend dependencies:
+bash
+  cd backend
+  npm install
+
+Set up the .env file with your MongoDB URI and JWT_SECRET.
+Start the server:
+bash
+  npm start
+
+For the frontend, navigate to the frontend directory and install dependencies:
+bash
+  cd frontend
+  npm install
+
+Run the frontend:
+bash
+  npm start
+
+Conclusion
+The School Dashboard provides an efficient solution for managing and tracking school transactions, offering a seamless experience for administrators and staff. By leveraging modern technologies like React.js for the frontend and Node.js with Express.js for the backend, this application ensures both performance and security.

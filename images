@@ -1,0 +1,48 @@
+# My App
+     The School Dashboard is a web app for managing school transactions.
+It allows administrators to view and track transactions by school.
+Users can update transaction statuses manually or via a webhook.
+Built with React.js for the frontend and Node.js for the backend.
+Secure authentication with JWT ensures safe access to the dashboard.
+
+
+
+login 
+username and password
+     "username": "aravind",
+    "email": "aravind123@gmail.com",
+    "password": "aravind123"
+
+
+## Screenshots
+
+### Frontend
+
+### App Layout 1
+![App Layout 1](https://res.cloudinary.com/djllxgzm0/image/upload/v1736750993/WhatsApp_Image_2025-01-13_at_12.12.12_5f57171b_aprq6n.jpg)
+
+![alt text](<WhatsApp Image 2025-01-13 at 12.12.12_18e6f26c.jpg>)
+
+### App Layout 2
+![App Layout 2](https://res.cloudinary.com/djllxgzm0/image/upload/v1736751037/WhatsApp_Image_2025-01-13_at_12.11.47_0ef08c1e_sjie57.jpg)
+![alt text](<WhatsApp Image 2025-01-13 at 12.12.12_1cfbf159.jpg>)
+
+### App Layout 3
+![App Layout 3](https://res.cloudinary.com/djllxgzm0/image/upload/v1736751037/WhatsApp_Image_2025-01-13_at_12.11.47_0ef08c1e_sjie57.jpg)
+
+### App Layout 4
+![App Layout 4](https://res.cloudinary.com/djllxgzm0/image/upload/v1736751057/WhatsApp_Image_2025-01-13_at_12.12.12_a6d001d4_l39tjp.jpg)
+
+
+
+### App Layout 5
+![App Layout 5](https://res.cloudinary.com/djllxgzm0/image/upload/v1736751049/WhatsApp_Image_2025-01-13_at_12.12.11_decc2a17_upcrzz.jpg)
+
+![alt text](<WhatsApp Image 2025-01-13 at 12.12.12_d5b7844c.jpg>)
+
+
+
+### App Layout 6
+![App Layout 6](https://res.cloudinary.com/djllxgzm0/image/upload/v1736751049/WhatsApp_Image_2025-01-13_at_12.12.11_decc2a17_upcrzz.jpg)
+
+![alt text](<WhatsApp Image 2025-01-13 at 12.12.12_77a70e13.jpg>)

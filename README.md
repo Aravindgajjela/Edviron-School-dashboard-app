@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# School Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application for managing and viewing school transaction data, built using React.
 
-## Available Scripts
 
-In the project directory, you can run:
+## login 
+username and password
+     "username": "aravind",
+    "email": "aravind123@gmail.com",
+    "password": "aravind123"
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Login Page**: Allows users to log in using a username and password.
+- **Dashboard**: A central page to access transaction data and filter it.
+- **Transactions Overview**: Displays a list of all transactions with options to filter by search term, status, and date.
+- **Transaction Details by School**: Allows users to view transactions based on a specific School ID.
+- **Transaction Status Check**: Displays the status of transactions.
+- **Real-Time Chart**: Visual representation of transaction trends over time.
+- **Dark Mode Toggle**: Switch between light and dark modes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React.js
+- **Backend**: Express.js (API calls handled by axios)
+- **CSS Framework**: Bootstrap
+- **Charts**: Chart.js for real-time transaction trends
+- **Spinners**: React Spinners (for loading states)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. Clone the repository:
+     git clone https://github.com/yourusername/school-dashboard.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies:
 
-### `npm run eject`
+4. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Open your browser and go to `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## File Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **src/**: Contains all the React components and logic.
+- **components/**: Folder for React components like Login, Dashboard, etc.
+- **utils/**: Folder for utility functions like API calls.
+- **App.js**: Main entry point for the application.
+- **App.css**: Styles for the application.
 
-## Learn More
+## Routes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `/login`: Login page
+- `/logout`: Logout page
+- `/dashboard`: Dashboard displaying transaction data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notes
 
-### Code Splitting
+- You will need a backend API to serve transaction data.
+- The API should expose endpoints like:
+- `/api/auth/login`: For login functionality
+- `/api/transactions`: For fetching all transaction data
+- `/api/transactions?school_id={id}`: For fetching transactions by School ID
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contribution
 
-### Analyzing the Bundle Size
+Feel free to fork this repo and submit pull requests for improvements or bug fixes!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
