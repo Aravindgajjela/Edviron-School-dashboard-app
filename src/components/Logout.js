@@ -8,7 +8,8 @@ class Logout extends React.Component {
     loggedOut: false,
   };
 
-  handleLogout = function () {
+  // Use an arrow function to properly bind `this`
+  handleLogout = () => {
     localStorage.removeItem('token');  // Remove the token
     // Optionally, reset the Authorization header
     api.defaults.headers['Authorization'] = '';  

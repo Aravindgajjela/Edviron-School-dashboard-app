@@ -1,95 +1,106 @@
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom'; 
+import api from '../utils/api'; 
+import { ThreeDots } from 'react-loader-spinner';  // Correct named import
 
-import React from 'react';
-import { Navigate } from 'react-router-dom'; // Import Navigate instead of Redirect
-import api from '../utils/api';  // Import your axios instance
-
-class Login extends React.Component {
-  state = {
-    username: '',
-    password: '',
-    error: '',
-    loggedIn: false,
-  };
-
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);  // New state for loading
+  
   // Handle input change
-  handleInputChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'username') {
+      setUsername(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
   };
 
   // Handle login form submission
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-  
-    const { username, password } = this.state;
-  
+
+    setLoading(true);  // Set loading to true when the request starts
+    
     api
       .post('/api/auth/login', { username, password })
       .then((response) => {
         console.log("Login Success", response.data);
         localStorage.setItem('token', response.data.jwtToken);
-        this.setState({ loggedIn: true });
+        setLoggedIn(true);
+        setLoading(false);  // Set loading to false after response is received
       })
       .catch((error) => {
+        setLoading(false);  // Set loading to false after response is received
         if (error.response) {
           console.log("Error Response Data: ", error.response.data);
-          console.log("Error Response Status: ", error.response.status);
-          this.setState({ error: 'Invalid credentials' });
+          setError('Invalid credentials');
         } else if (error.request) {
           console.error("No Response Received: ", error.request);
-          this.setState({ error: 'Server not reachable' });
+          setError('Server not reachable');
         } else {
           console.error("Error Message: ", error.message);
-          this.setState({ error: 'Unexpected error occurred' });
+          setError('Unexpected error occurred');
         }
       });
   };
-  
 
-  render() {
-    if (this.state.loggedIn) {
-      return <Navigate to="/dashboard" />; // Use Navigate for redirection
-    }
-
-    return (
-      <div className="container mt-4">
-        <h2>Login</h2>
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="username" className="form-label">
-              Username
-            </label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              className="form-control"
-              value={this.state.username}
-              onChange={this.handleInputChange}
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              className="form-control"
-              value={this.state.password}
-              onChange={this.handleInputChange}
-              required
-            />
-          </div>
-          {this.state.error && <div className="alert alert-danger">{this.state.error}</div>}
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </form>
-      </div>
-    );
+  if (loggedIn) {
+    return <Navigate to="/dashboard" />; // Use Navigate for redirection
   }
-}
+
+  return (
+    <div className="container mt-4">
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="username" className="form-label">
+            Username
+          </label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            className="form-control"
+            value={username}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            className="form-control"
+            value={password}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        
+        {error && <div className="alert alert-danger">{error}</div>}
+        
+        <button type="submit" className="btn btn-primary" disabled={loading}>
+          Login
+        </button>
+        
+        {/* Show loader when loading is true */}
+        {loading && (
+          <div className="mt-3 loader">
+            <ThreeDots color="#0b69ff" height={50} width={50} />
+          </div>
+        )}
+      </form>
+    </div>
+  );
+};
 
 export default Login;

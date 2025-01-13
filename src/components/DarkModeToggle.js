@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa'; // Importing icons from react-icons
 import './DarkModeToggle.css';
+import Logout from '../components/Logout'
 
 class DarkModeToggle extends Component {
   state = {
@@ -23,6 +24,7 @@ class DarkModeToggle extends Component {
           {isDarkMode ? <FaSun /> : <FaMoon />} {/* Show Sun for Dark mode, Moon for Light mode */}
           <span className="ml-2">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
         </button>
+        <Logout />
       </div>
     );
   }

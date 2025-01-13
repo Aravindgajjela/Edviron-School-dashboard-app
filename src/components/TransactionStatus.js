@@ -1,16 +1,28 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import api from '../utils/api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TransactionStatus = () => {
-  const checkTransactionStatus = async (orderId) => {
+  const [status, setStatus] = useState(""); // State for input value
+  const [displayStatus, setDisplayStatus] = useState(""); // State to display transaction status
+  const [error, setError] = useState(null); // State to handle errors
+
+  // Function to check transaction status
+  const checkTransactionStatus = async () => {
     try {
-      const response = await axios.get(`/check-status?custom_order_id=${orderId}`);
-      console.log(response.data);
-      // Display status here
+      const response = await api.get(`/api/transactions/status/${status}`);
+      setDisplayStatus(response.data.status);
+      setError(null); // Clear any previous errors
     } catch (error) {
       console.error('Error checking transaction status:', error);
+      setDisplayStatus("");
+      setError("Failed to fetch transaction status. Please check the Custom Order ID.");
     }
+  };
+
+  // Handle input change
+  const handleStatusChange = (event) => {
+    setStatus(event.target.value); // Update status with input value
   };
 
   return (
@@ -22,16 +34,20 @@ const TransactionStatus = () => {
             type="text"
             className="form-control"
             placeholder="Enter Custom Order ID"
+            value={status} // Controlled input
+            onChange={handleStatusChange} // Update state on input change
           />
         </div>
         <div className="col">
-          <button className="btn btn-primary" onClick={() => checkTransactionStatus('order_id')}>
+          <button className="btn btn-primary" onClick={checkTransactionStatus}>
             Check Status
           </button>
         </div>
       </div>
       <div>
-        {/* Display transaction status here */}
+        {/* Display transaction status or error */}
+        {displayStatus && <h3>Status: {displayStatus}</h3>}
+        {error && <p className="text-danger">{error}</p>}
       </div>
     </div>
   );

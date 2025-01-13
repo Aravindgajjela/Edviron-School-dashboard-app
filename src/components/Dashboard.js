@@ -2,7 +2,7 @@ import React from 'react';
 import TransactionsOverview from './TransactionsOverview';
 import TransactionDetails from './TransactionDetails';
 import TransactionStatus from './TransactionStatus';
-import DarkModeToggle from './DarkModeToggle'; // Import your dark mode toggle component
+import DarkModeToggle from './DarkModeToggle'; 
 
 class Dashboard extends React.Component {
   state = {
@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
     return (
       <div className="container mt-4">
         <h1>Dashboard</h1>
+        
         {/* Dark Mode Toggle */}
         <DarkModeToggle />
         {/* Tab Navigation */}
@@ -42,11 +43,12 @@ class Dashboard extends React.Component {
             Transaction Status Check
           </button>
         </div>
-
+        
         {/* Tab Content */}
         {activeTab === 'overview' && <TransactionsOverview />}
         {activeTab === 'details' && <TransactionDetails />}
         {activeTab === 'status' && <TransactionStatus />}
+        
       </div>
     );
   }
