@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import api from '../utils/api';
-import { ThreeDots } from 'react-loader-spinner';  // Import loader from react-loader-spinner
+import { ClipLoader } from 'react-spinners';
 
 const TransactionsOverview = () => {
   const [transactions, setTransactions] = useState([]); // State for transactions
@@ -96,7 +96,7 @@ const TransactionsOverview = () => {
       {/* Loader */}
       {loading ? (
         <div className="text-center loader">
-          <ThreeDots color="#0b69ff" height={50} width={50} />
+          <ClipLoader color="#0b69ff" height={50} width={50} />
         </div>
       ) : (
         <table className="table table-bordered">

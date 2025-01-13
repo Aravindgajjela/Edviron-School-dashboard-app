@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom'; 
 import api from '../utils/api'; 
-import { ThreeDots } from 'react-loader-spinner';  // Correct named import
+import { ClipLoader } from 'react-spinners';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -95,7 +95,7 @@ const Login = () => {
         {/* Show loader when loading is true */}
         {loading && (
           <div className="mt-3 loader">
-            <ThreeDots color="#0b69ff" height={50} width={50} />
+            <ClipLoader color="#0b69ff" height={50} width={50} />
           </div>
         )}
       </form>
