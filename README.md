@@ -9,6 +9,42 @@ username and password
     "email": "aravind123@gmail.com",
     "password": "aravind123"
 
+
+##App
+
+Frontend connected with Backend code
+Frontend deployed on vercel app
+
+GitHub Repository URL: https://github.com/Aravindgajjela/Edviron-School-dashboard-app.git
+Hosted Project URL: https://managementschoolclient.vercel.app/
+
+
+## login 
+username and password
+     "username": "aravind",
+    "email": "aravind123@gmail.com",
+    "password": "aravind123"
+
+
+##
+
+Backend code
+deployed on render
+
+GitHub Repository URL: https://github.com/Aravindgajjela/Edviron-School-Management-Backend-code
+Hosted Project URL: https://managementschoolserver.onrender.com/
+
+
+## login 
+username and password
+     "username": "aravind",
+    "email": "aravind123@gmail.com",
+    "password": "aravind123"
+
+
+
+
+
 ## Features
 
 - **Login Page**: Allows users to log in using a username and password.
@@ -73,4 +109,12 @@ Feel free to fork this repo and submit pull requests for improvements or bug fix
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+images links https://res.cloudinary.com/djllxgzm0/image/upload/v1736750993/WhatsApp_Image_2025-01-13_at_12.12.12_5f57171b_aprq6n.jpg
 
+https://res.cloudinary.com/djllxgzm0/image/upload/v1736751022/WhatsApp_Image_2025-01-13_at_12.12.12_b43765f0_hsp24o.jpg
+
+https://res.cloudinary.com/djllxgzm0/image/upload/v1736751037/WhatsApp_Image_2025-01-13_at_12.11.47_0ef08c1e_sjie57.jpg
+
+https://res.cloudinary.com/djllxgzm0/image/upload/v1736751057/WhatsApp_Image_2025-01-13_at_12.12.12_a6d001d4_l39tjp.jpg
+
+https://res.cloudinary.com/djllxgzm0/image/upload/v1736751049/WhatsApp_Image_2025-01-13_at_12.12.11_decc2a17_upcrzz.jpg

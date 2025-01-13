@@ -7,7 +7,7 @@ Secure authentication with JWT ensures safe access to the dashboard.
 
 
 
-login 
+## login 
 username and password
      "username": "aravind",
     "email": "aravind123@gmail.com",
